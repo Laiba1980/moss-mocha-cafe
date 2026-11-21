@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moss & Mocha Cafe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="nav">
+    <div class="nav-in">
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <a href="#home" class="logo">Moss <i>&amp;</i> Mocha</a>
+
+      <button class="pill" id="cartBtn" type="button" aria-label="Cart">
+        &#9749; <b id="cartCount">0</b>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== LEFT SIDE MENU ===== -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="drawer" aria-label="Menu categories">
+    <div class="drawer-top">
+      <span class="drawer-title">Our Menu</span>
+      <button class="close" id="closeBtn" type="button" aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="drawer-links" id="drawerLinks"></nav>
+  </aside>
+
+  <main>
+
+    <!-- ================= HOME PAGE ================= -->
+    <div id="home">
+
+      <!-- HERO: beans upar se girte aur hilte hain -->
+      <section class="hero">
+
+        <!-- coffee beans (har bean ki apni jagah, size aur speed) -->
+        <div class="beans" aria-hidden="true">
+          <span class="bean" style="--l:4%;  --s:34px; --t:13s; --dl:0s"></span>
+          <span class="bean" style="--l:12%; --s:22px; --t:17s; --dl:2s"></span>
+          <span class="bean" style="--l:20%; --s:40px; --t:15s; --dl:5s"></span>
+          <span class="bean" style="--l:29%; --s:26px; --t:19s; --dl:1s"></span>
+          <span class="bean" style="--l:38%; --s:32px; --t:14s; --dl:7s"></span>
+          <span class="bean" style="--l:47%; --s:20px; --t:18s; --dl:3s"></span>
+          <span class="bean" style="--l:55%; --s:38px; --t:16s; --dl:9s"></span>
+          <span class="bean" style="--l:63%; --s:24px; --t:20s; --dl:4s"></span>
+          <span class="bean" style="--l:71%; --s:36px; --t:13s; --dl:6s"></span>
+          <span class="bean" style="--l:79%; --s:28px; --t:17s; --dl:0.5s"></span>
+          <span class="bean" style="--l:87%; --s:42px; --t:15s; --dl:8s"></span>
+          <span class="bean" style="--l:94%; --s:24px; --t:19s; --dl:3.5s"></span>
+        </div>
+
+        <div class="hero-grid">
+
+          <!-- left: likhai -->
+          <div class="hero-text">
+            <p class="eyebrow">Freshly roasted every morning</p>
+            <h1 class="words">
+              <span style="--i:0">Wake</span>
+              <span style="--i:1">up</span>
+              <span style="--i:2">to</span>
+              <span style="--i:3"><em>something</em></span>
+              <span style="--i:4">good</span>
+            </h1>
+            <p class="lead">Handcrafted coffee, fresh teas and warm desserts in a cosy green corner. Upar left wale 3 lines button se menu kholo.</p>
+            <div class="hero-cta">
+              <a class="btn solid" href="#hot-coffee">Order now</a>
+              <a class="btn ghost" href="#cold-coffee">Try cold coffee</a>
+            </div>
+          </div>
+
+          <!-- right: bhaap uthta cup -->
+          <div class="hero-art">
+            <div class="plate"></div>
+            <div class="cup-wrap">
+              <div class="steam"><i></i><i></i><i></i></div>
+              <div class="cup">
+                <div class="coffee"></div>
+                <div class="handle"></div>
+              </div>
+              <div class="saucer"></div>
+            </div>
+            <div class="chip c1">Fresh roasted</div>
+            <div class="chip c2">Vegan options</div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- chalti hui strip -->
+      <div class="strip" aria-hidden="true">
+        <div class="strip-track">
+          <span>Espresso</span><i>&#10022;</i><span>Latte</span><i>&#10022;</i><span>Cold Brew</span><i>&#10022;</i>
+          <span>Matcha</span><i>&#10022;</i><span>Brownie</span><i>&#10022;</i><span>Croissant</span><i>&#10022;</i>
+          <span>Espresso</span><i>&#10022;</i><span>Latte</span><i>&#10022;</i><span>Cold Brew</span><i>&#10022;</i>
+          <span>Matcha</span><i>&#10022;</i><span>Brownie</span><i>&#10022;</i><span>Croissant</span><i>&#10022;</i>
+        </div>
+      </div>
+
+      <!-- 5 category tiles -->
+      <section class="cat-sec">
+        <div class="cat-in">
+          <p class="eyebrow">Browse</p>
+          <h2>What are you craving?</h2>
+
+          <div class="cat-tiles">
+            <a href="#hot-coffee" class="tile" style="--i:0">
+              <span class="tile-ico">&#9749;</span>
+              <h3>Hot Coffee</h3>
+              <p>Espresso, latte, cappuccino</p>
+            </a>
+            <a href="#cold-coffee" class="tile" style="--i:1">
+              <span class="tile-ico">&#129482;</span>
+              <h3>Cold Coffee</h3>
+              <p>Iced, frappe, cold brew</p>
+            </a>
+            <a href="#tea" class="tile" style="--i:2">
+              <span class="tile-ico">&#127861;</span>
+              <h3>Tea &amp; More</h3>
+              <p>Matcha, chai, green tea</p>
+            </a>
+            <a href="#desserts" class="tile" style="--i:3">
+              <span class="tile-ico">&#127856;</span>
+              <h3>Desserts</h3>
+              <p>Brownies, cakes, cookies</p>
+            </a>
+            <a href="#snacks" class="tile" style="--i:4">
+              <span class="tile-ico">&#129360;</span>
+              <h3>Snacks</h3>
+              <p>Sandwiches, croissants</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- visit us -->
+      <section class="visit">
+        <div class="visit-in">
+          <div>
+            <p class="eyebrow">Visit us</p>
+            <h2>Aao, ek cup saath piyein</h2>
+            <p class="muted">Ye ek practice website hai, is liye address aur timing farzi hain.</p>
+          </div>
+          <ul class="hours">
+            <li><span>Mon - Fri</span><b>8:00 am - 11:00 pm</b></li>
+            <li><span>Saturday</span><b>9:00 am - 12:00 am</b></li>
+            <li><span>Sunday</span><b>10:00 am - 10:00 pm</b></li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+    <!-- ================= HOME PAGE KHATAM ================= -->
+
+
+    <!-- ================= CATEGORY PAGE (JS yahan items dikhata hai) ================= -->
+    <section id="catPage" hidden></section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="foot">
+    <a href="#home" class="logo">Moss <i>&amp;</i> Mocha</a>
+    <p>&copy; <span id="year">2026</span> Moss &amp; Mocha Cafe. Practice website.</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
