@@ -216,3 +216,19 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit
   .words span,.lead,.hero-cta,.tile,.drawer-links a{opacity:1!important;transform:none!important}
   .bean{opacity:.9}
 }
+/* ---------- CART ---------- */
+.cart-drawer{position:fixed;top:0;right:0;bottom:0;width:min(380px,90vw);background:var(--cream);z-index:70;transform:translateX(102%);transition:transform .45s cubic-bezier(.2,.7,.2,1);padding:22px;display:flex;flex-direction:column;box-shadow:-12px 0 40px rgba(43,26,17,.25)}
+.cart-drawer.open{transform:none}
+.cart-list{flex:1;overflow-y:auto;display:grid;gap:12px;align-content:start;padding-right:4px}
+.cart-empty{text-align:center;color:var(--muted);padding:50px 10px}
+.cart-item{display:grid;grid-template-columns:1fr auto;gap:8px 12px;align-items:center;background:#fff;border:2px solid var(--line);border-radius:16px;padding:12px 14px;animation:rise .4s ease backwards}
+.cart-item b{font-family:var(--font-head);font-weight:400;font-size:1.2rem;color:var(--moss-d)}
+.cart-item small{color:var(--muted)}
+.cart-item strong{color:var(--moss)}
+.qty{display:flex;align-items:center;gap:10px}
+.qty button{width:30px;height:30px;border-radius:50%;border:2px solid var(--moss);color:var(--moss);font-weight:700;font-size:1.1rem;line-height:1}
+.qty button:hover{background:var(--moss);color:var(--cream)}
+.cart-foot{border-top:1px solid var(--line);padding-top:16px;margin-top:12px}
+.cart-total{display:flex;justify-content:space-between;align-items:center;font-size:1.1rem;margin-bottom:12px}
+.cart-total strong{font-family:var(--font-head);font-weight:400;font-size:1.6rem;color:var(--moss)}
+.btn.wide{display:block;width:100%;text-align:center}
