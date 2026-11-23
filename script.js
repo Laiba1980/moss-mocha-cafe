@@ -3,6 +3,9 @@
 // Home page + category pages + cart
 // =========================================
 
+// Yahan WhatsApp number likho: country code ke saath, bina + aur bina 0 ke
+// Misal: 0300 12343777  ->  9230012343777
+const WHATSAPP_NUMBER = '9230012343777';
 // ---------- 1. Categories ----------
 const CATS = [
   { id: 'hot-coffee',  name: 'Hot Coffee',  ico: '&#9749;',   line: 'Hot, fresh and full of aroma' },
@@ -224,20 +227,24 @@ document.addEventListener('click', (e) => {
   }
 });
 
-$('cartBtn').addEventListener('click', openCart);
-$('cartClose').addEventListener('click', closeCart);
-overlay.addEventListener('click', closeCart);
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeCart(); });
-
 $('orderBtn').addEventListener('click', () => {
-  if (!cartQty()) { showToast('Add something first'); return; }
-  Object.keys(cart).forEach((k) => delete cart[k]);
-  renderCart();
-  closeCart();
-  showToast('Order placed! (demo only)');
-});
+  const ids = Object.keys(cart);
+  if (!ids.length) { showToast('Add something first'); return; }
 
-renderCart();
+  let total = 0;
+  const lines = ids.map((id) => {
+    const it = itemOf(id);
+    const sub = it.price * cart[id];
+    total += sub;
+    return '- ' + it.name + ' x' + cart[id] + ' = ' + rs(sub);
+  });
+
+  const text = 'Hi Moss & Mocha, I want to order:\n' + lines.join('\n') + '\nTotal: ' + rs(total);
+  const url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
+
+  window.open(url, '_blank');
+  showToast('Opening WhatsApp...');
+});
 
 // ---------- 8. If a photo is missing, show a green box ----------
 document.addEventListener('error', (e) => {
